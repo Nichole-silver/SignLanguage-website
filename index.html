@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Ngôn Ngữ Ký Hiệu | Trang chủ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-hands"></i>
+            <h1>HỌC KÝ HIỆU</h1>
+        </div>
+        <div class="hamburger" onclick="initNavigation()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li class="active"><a href="#home" onclick="switchSection('home')">Trang chủ</a></li>
+            <li><a href="#lessons" onclick="switchSection('lessons')">Bài học</a></li>
+            <li><a href="#dictionary" onclick="switchSection('dictionary')">Từ điển</a></li>
+            <li><a href="#practice" onclick="switchSection('practice')">Luyện tập</a></li>
+            <li><a href="#progress" onclick="switchSection('progress')">Tiến trình</a></li>
+            <div class="indicator"></div>
+        </ul>
+    </nav>
+
+    <!-- TRANG CHỦ -->
+    <section id="home" class="section active">
+        <!-- Hero image: đặt bên ngoài để tràn toàn màn -->
+        <div class="hero-image"></div>
+
+        <div class="hero-content">
+            <h1>Chào mừng đến với Học Ngôn Ngữ Ký Hiệu</h1>
+
+            <div class="hero-features">
+                <div class="feature">
+                    <i class="fas fa-graduation-cap"></i>
+                    <p>Bài học cơ bản</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-book"></i>
+                    <p>Từ điển ký hiệu</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-gamepad"></i>
+                    <p>Luyện tập tương tác</p>
+                </div>
+            </div>
+
+            <button class="cta-button" onclick="startLesson()">
+                Bắt đầu học ngay
+            </button>
+        </div>
+
+        <!-- Lý do -->
+        <div class="why-learn">
+            <h2>Tại sao nên học ngôn ngữ ký hiệu?</h2>
+            <div class="reasons">
+                <div class="reason">
+                    <i class="fas fa-comment"></i>
+                    <h3>Giao tiếp hiệu quả</h3>
+                    <p>Giúp bạn giao tiếp với người khiếm thính và người điếc</p>
+                </div>
+                <div class="reason">
+                    <i class="fas fa-brain"></i>
+                    <h3>Phát triển nhận thức</h3>
+                    <p>Cải thiện khả năng ghi nhớ và tư duy không gian</p>
+                </div>
+                <div class="reason">
+                    <i class="fas fa-heart"></i>
+                    <h3>Thúc đẩy hòa nhập</h3>
+                    <p>Góp phần xây dựng một xã hội hòa nhập hơn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Bài học -->
+    <section id="lessons" class="section">
+        <h2>Bài học cơ bản</h2>
+        <p class="subtitle">Học từng bước các kỹ năng ngôn ngữ ký hiệu cơ bản</p>
+        
+        <div class="category-tabs">
+            <button class="tab active" onclick="changeCategory('alphabet')">Chữ cái</button>
+            <button class="tab" onclick="changeCategory('numbers')">Số đếm</button>
+            <button class="tab" onclick="changeCategory('greetings')">Chào hỏi</button>
+            <button class="tab" onclick="changeCategory('people')">Con người</button>
+            <button class="tab" onclick="changeCategory('emotions')">Cảm xúc</button>
+            <button class="tab" onclick="changeCategory('places')">Địa điểm</button>
+            <button class="tab" onclick="changeCategory('actions')">Hành động</button>
+        </div>
+        
+        <div class="lesson-container">
+            <div id="alphabet" class="lesson-category active">
+                <h3>Bảng chữ cái (A-Z)</h3>
+                <div class="lessons-grid" id="alphabet-grid">
+                    <!-- Sẽ được tạo động bởi JavaScript -->
+                </div>
+            </div>
+            
+            <div id="numbers" class="lesson-category">
+                <h3>Số đếm (0-9)</h3>
+                <div class="lessons-grid" id="numbers-grid">
+                    <!-- Sẽ được tạo động bởi JavaScript -->
+                </div>
+            </div>
+            
+            <div id="greetings" class="lesson-category">
+                <h3>Chào hỏi, giới thiệu bản thân</h3>
+                <div class="lessons-grid" id="greetings-grid">
+                    <!-- Sẽ được tạo động bởi JavaScript -->
+                </div>
+            </div>
+            
+            <div id="people" class="lesson-category">
+                <h3>Con người</h3>
+                <div class="lessons-grid" id="people-grid">
+                    <!-- Sẽ được tạo động bởi JavaScript -->
+                </div>
+            </div>
+            
+            <div id="emotions" class="lesson-category">
+                <h3>Cảm xúc</h3>
+                <div class="lessons-grid" id="emotions-grid">
+                    <!-- Sẽ được tạo động bởi JavaScript -->
+                </div>
+            </div>
+            
+            <div id="colors" class="lesson-category">
+                <h3>Màu sắc</h3>
+                <div class="lessons-grid" id="colors-grid">
+                    <!-- Sẽ được tạo động bởi JavaScript -->
+                </div>
+            </div>
+
+            <div id="places" class="lesson-category">
+                <h3>Địa điểm</h3>
+                <div class="lessons-grid" id="places-grid">
+                    <!-- Sẽ được tạo động bởi JavaScript -->
+                </div>
+            </div>
+
+            <div id="actions" class="lesson-category">
+                <h3>Hành động</h3>
+                <div class="lessons-grid" id="actions-grid">
+                    <!-- Sẽ được tạo động bởi JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal xem chi tiết bài học -->
+        <div id="lesson-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="lesson-detail">
+                    <!-- Nội dung chi tiết bài học sẽ được load động -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Từ điển ký hiệu -->
+    <section id="dictionary" class="section">
+        <h2>Từ điển ký hiệu</h2>
+        <p class="subtitle">Tra cứu các từ và cụm từ phổ biến trong ngôn ngữ ký hiệu</p>
+        
+        <!-- Thêm tab cho chức năng mới -->
+        <div class="dictionary-modes">
+        <button class="mode-btn active" onclick="switchDictionaryMode('search')">Tìm kiếm</button>
+        <button class="mode-btn" onclick="switchDictionaryMode('camera')">Camera</button>
+        <button class="mode-btn" onclick="switchDictionaryMode('testapi')">Dịch ảnh</button>
+        </div>
+
+        <!-- Phần tìm kiếm gốc -->
+        <div id="search-mode" class="dictionary-mode active">
+            <div class="search-container">
+                <input type="text" id="dictionary-search" placeholder="Nhập từ tiếng Anh hoặc tiếng Việt...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="dictionary-categories">
+                <h3>Từ phổ biến theo nhóm</h3>
+                <div class="category-pills">
+                    <button class="pill active" onclick="filterDictionary('all')">Tất cả</button>
+                    <button class="pill" onclick="filterDictionary('alphabet')">Chữ cái</button>
+                    <button class="pill" onclick="filterDictionary('numbers')">Số đếm</button>
+                    <button class="pill" onclick="filterDictionary('greetings')">Chào hỏi</button>
+                    <button class="pill" onclick="filterDictionary('people')">Con người</button>
+                    <button class="pill" onclick="filterDictionary('emotions')">Cảm xúc</button>
+                    <button class="pill" onclick="filterDictionary('colors')">Màu sắc</button>
+                    <button class="pill" onclick="filterDictionary('places')">Địa điểm</button>
+                    <button class="pill" onclick="filterDictionary('actions')">Hành động</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần Dịch Ảnh -->
+        <div id="camera-mode" class="dictionary-mode">
+            <div class="camera-container">
+                <video id="camera-feed" autoplay playsinline></video>
+                <div id="countdown-overlay"></div>
+                <canvas id="camera-canvas" hidden></canvas>
+                <div class="camera-controls">
+                    <button class="capture-btn" onclick="startCamera()">
+                        <i class="fas fa-video"></i> Mở camera
+                    </button>
+                    <button class="capture-btn" onclick="captureImage()">
+                        <i class="fas fa-camera"></i> Chụp ảnh
+                    </button>
+                    <button class="capture-btn" onclick="captureAndTranslate()">
+                        <i class="fas fa-paper-plane"></i> Gửi và dịch
+                    </button>
+                </div>
+            </div>
+            <div id="camera-result" class="translation-result"></div>
+        </div>
+
+        
+        <!-- gửi API -->
+        <div id="testapi-mode" class="dictionary-mode">
+            <h3>Test API: Nhận dạng ký hiệu từ ảnh base64</h3>
+            <div class="testapi-container">
+                <input type="file" id="testapi-fileInput" accept="image/*" />
+                <button id="testapi-sendBtn"><i class="fas fa-upload"></i> Gửi ảnh lên API</button>
+                <div class="testapi-preview" id="testapi-preview"></div>
+                <h4>Kết quả trả về:</h4>
+                <div id="testapi-result"></div>
+            </div>
+        </div>
+        
+        <div class="dictionary-results">
+            <div class="dictionary-grid" id="dictionary-items"></div>
+            <div id="no-results" class="hidden">
+                <p>Không tìm thấy kết quả phù hợp</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Khu vực luyện tập -->
+    <section id="practice" class="section">
+        <h2>Luyện tập</h2>
+        <p class="subtitle">Kiểm tra và củng cố kiến thức của bạn qua các bài tập tương tác</p>
+        
+        <div class="practice-types">
+            <button class="practice-type active" onclick="changePracticeType('multiple-choice')">
+                <i class="fas fa-check-circle"></i>
+                <span>Trắc nghiệm</span>
+            </button>
+            <button class="practice-type" onclick="changePracticeType('drag-drop')">
+                <i class="fas fa-arrows-alt"></i>
+                <span>Kéo thả</span>
+            </button>
+            <button class="practice-type" onclick="changePracticeType('memory')">
+                <i class="fas fa-brain"></i>
+                <span>Ghi nhớ</span>
+            </button>
+            <button class="practice-type" onclick="changePracticeType('sentence-builder')">
+                <i class="fas fa-puzzle-piece"></i>
+                <span>Ghép câu</span>
+            </button>
+        </div>
+        
+        <div class="practice-container">
+            <div id="multiple-choice" class="practice-area active">
+                <h3>Chọn đáp án đúng</h3>
+                <div class="quiz-stats">
+                    <div class="stat-item">
+                        <span>Câu hỏi: <span id="current-question">1</span>/<span id="total-questions">20</span></span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Điểm: <span id="current-score">0</span></span>
+                    </div>
+                </div>
+                <div class="quiz-container">
+                    <div class="quiz-question">
+                        <img id="quiz-image" src="" alt="Ký hiệu cần đoán" class="quiz-image"/>
+                        <p id="quiz-text">Ký hiệu này có ý nghĩa gì?</p>
+                    </div>
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- Các lựa chọn sẽ được tạo động -->
+                    </div>
+                    <div class="quiz-feedback hidden" id="quiz-feedback">
+                        <p class="feedback-text" id="feedback-text"></p>
+                        <button class="next-question" onclick="nextQuestion()">Câu tiếp theo</button>
+                    </div>
+                </div>
+                <div class="quiz-results hidden" id="quiz-results">
+                    <h3>Kết quả</h3>
+                    <div class="result-stats">
+                        <p>Số câu đúng: <span id="correct-answers">0</span>/20</p>
+                        <p>Điểm số: <span id="final-score">0</span></p>
+                        <p>Đánh giá: <span id="performance-rating">Cần cố gắng</span></p>
+                    </div>
+                    <button onclick="startQuiz()">Làm lại</button>
+                </div>
+            </div>
+            
+            <div id="drag-drop" class="practice-area">
+                <h3>Kéo thả từ vào ký hiệu tương ứng</h3>
+                <div class="drag-drop-container">
+                    <div class="drag-items" id="drag-items">
+                        <!-- Các từ để kéo thả sẽ được tạo động -->
+                    </div>
+                    <div class="drop-targets" id="drop-targets">
+                        <!-- Các mục tiêu thả sẽ được tạo động -->
+                    </div>
+                </div>
+                <div class="drag-drop-feedback">
+                    <button class="reset-dragdrop" onclick="resetDragDrop()">Làm lại</button>
+                    <button class="check-dragdrop" onclick="checkDragDrop()">Kiểm tra</button>
+                </div>
+                <div class="drag-drop-results hidden" id="drag-drop-results">
+                    <p id="drag-drop-score"></p>
+                </div>
+            </div>
+            
+            <div id="memory" class="practice-area">
+                <h3>Thử thách ghi nhớ - Flash Cards</h3>
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner" id="flashcard-inner">
+                            <div class="flashcard-front">
+                                <img id="flashcard-image" src="" alt="Ký hiệu" />
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="word-display">
+                                    <h3 id="flashcard-word">Ví dụ</h3>
+                                    <p id="flashcard-meaning">Nghĩa minh họa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard-controls">
+                        <button onclick="flipCard()">Lật thẻ</button>
+                        <button onclick="prevCard()">← Thẻ trước</button>
+                        <span id="card-counter">1/10</span>
+                        <button onclick="nextCard()">Thẻ sau →</button>
+                        <button onclick="shuffleCards()">Xáo trộn</button>
+                    </div>
+
+                    <div class="flashcard-progress">
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="flashcard-progress" style="width: 10%;">10%</div>
+                        </div>
+                    </div>
+                </div> 
+            </div> 
+        </div>
+        <div id="sentence-builder" class="practice-area">
+            <h3>Ghép ảnh ký hiệu thành câu</h3>
+            <p class="subtitle">Xếp các ảnh ký hiệu theo đúng thứ tự để tạo thành câu sau:</p>
+            <div id="sentence-prompt" class="sentence-prompt">
+                <!-- Câu yêu cầu sẽ được chèn động -->
+            </div>
+            <div class="sentence-builder-container">
+                <div id="available-signs" class="signs-pool">
+                    <!-- Các ảnh ký hiệu để kéo -->
+                </div>
+                <div id="sentence-drop-zone" class="drop-zone">
+                    <!-- Nơi thả ảnh để xếp thành câu -->
+                </div>
+            </div>
+            <div class="builder-controls">
+                <button onclick="checkSentenceBuilder()">Kiểm tra</button>
+                <button onclick="resetSentenceBuilder()">Làm lại</button>
+            </div>
+            <div id="sentence-feedback" class="feedback hidden"></div>
+        </div>
+
+    </section>
+
+    <!-- Tiến trình học -->
+    <section id="progress" class="section">
+        <h2>Tiến trình học</h2>
+        <p class="subtitle">Theo dõi sự tiến bộ của bạn qua các bài học</p>
+        
+        <div class="progress-overview">
+            <div class="progress-card">
+                <h3>Tổng quan</h3>
+                <div class="progress-chart">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="total-progress" style="width: 0%;">0%</div>
+                    </div>
+                </div>
+                <div class="progress-stats">
+                    <div class="stat">
+                        <span class="stat-number" id="completed-lessons">0</span>
+                        <span class="stat-label">Bài học đã hoàn thành</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="total-lessons">60</span>
+                        <span class="stat-label">Tổng số bài học</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="practice-score">0</span>
+                        <span class="stat-label">Điểm luyện tập</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" id="average-score">0</span>
+                        <span class="stat-label">Điểm trung bình</span>
+                    </div>
+                </div>
+                <div class="performance-rating">
+                    <h4>Đánh giá năng lực: <span id="overall-rating">Mới bắt đầu</span></h4>
+                    <div class="rating-description">
+                        <p id="rating-description">Hãy hoàn thành thêm bài học để cải thiện trình độ!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-details">
+            <h3>Chi tiết tiến trình theo danh mục</h3>
+            <div class="category-progress">
+                <div class="category-item">
+                    <div class="category-info">
+                        <h4>Chữ cái</h4>
+                        <span class="completion" id="alphabet-completion">0/26</span>
+                    </div>
+                    <div class="category-bar-container">
+                        <div class="category-bar" id="alphabet-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-info">
+                        <h4>Số đếm</h4>
+                        <span class="completion" id="numbers-completion">0/10</span>
+                    </div>
+                    <div class="category-bar-container">
+                        <div class="category-bar" id="numbers-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-info">
+                        <h4>Chào hỏi</h4>
+                        <span class="completion" id="greetings-completion">0/8</span>
+                    </div>
+                    <div class="category-bar-container">
+                        <div class="category-bar" id="greetings-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-info">
+                        <h4>Con người</h4>
+                        <span class="completion" id="people-completion">0/8</span>
+                    </div>
+                    <div class="category-bar-container">
+                        <div class="category-bar" id="people-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-info">
+                        <h4>Cảm xúc</h4>
+                        <span class="completion" id="emotions-completion">0/6</span>
+                    </div>
+                    <div class="category-bar-container">
+                        <div class="category-bar" id="emotions-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+                
+                <div class="category-item">
+                    <div class="category-info">
+                        <h4>Màu sắc</h4>
+                        <span class="completion" id="colors-completion">0/8</span>
+                    </div>
+                    <div class="category-bar-container">
+                        <div class="category-bar" id="colors-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recent-activity">
+            <h3>Hoạt động gần đây</h3>
+            <div class="activity-list" id="recent-activities">
+                <p class="no-activity">Chưa có hoạt động nào được ghi nhận</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-hands"></i>
+                <h2>HỌC KÝ HIỆU</h2>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Khám phá</h3>
+                    <ul>
+                        <li><a href="#home">Trang chủ</a></li>
+                        <li><a href="#lessons">Bài học</a></li>
+                        <li><a href="#dictionary">Từ điển</a></li>
+                        <li><a href="#practice">Luyện tập</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Liên hệ</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-envelope"></i> contact@hoc.vn</a></li>
+                        <li><a href="#"><i class="fab fa-phone"></i> 0123-456-789</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kết nối</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-column">
+    <h3>Về người tạo</h3>
+    <p>Trang web này được phát triển bởi <strong>Nguyễn Định An và Phạm Vũ Huy Nhật</strong>, người đam mê công nghệ và mong muốn đóng góp vào việc nâng cao khả năng tiếp cận ngôn ngữ ký hiệu tại Việt Nam.</p>
+</div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Học Ngôn Ngữ Ký Hiệu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
